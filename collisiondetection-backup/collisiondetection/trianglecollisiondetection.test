@@ -1,0 +1,282 @@
+	.file	"trianglecollisiondetection.cpp"
+	.section	.text._Z11vectorminusRK9_vector3dS1_RS_,"axG",@progbits,_Z11vectorminusRK9_vector3dS1_RS_,comdat
+	.weak	_Z11vectorminusRK9_vector3dS1_RS_
+	.type	_Z11vectorminusRK9_vector3dS1_RS_, @function
+_Z11vectorminusRK9_vector3dS1_RS_:
+.LFB1:
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	movl	8(%ebp), %eax
+	flds	(%eax)
+	movl	12(%ebp), %eax
+	flds	(%eax)
+	fsubrp	%st, %st(1)
+	movl	16(%ebp), %eax
+	fstps	(%eax)
+	movl	8(%ebp), %eax
+	flds	4(%eax)
+	movl	12(%ebp), %eax
+	flds	4(%eax)
+	fsubrp	%st, %st(1)
+	movl	16(%ebp), %eax
+	fstps	4(%eax)
+	movl	8(%ebp), %eax
+	flds	8(%eax)
+	movl	12(%ebp), %eax
+	flds	8(%eax)
+	fsubrp	%st, %st(1)
+	movl	16(%ebp), %eax
+	fstps	8(%eax)
+	nop
+	popl	%ebp
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
+	ret
+	.cfi_endproc
+.LFE1:
+	.size	_Z11vectorminusRK9_vector3dS1_RS_, .-_Z11vectorminusRK9_vector3dS1_RS_
+	.section	.text._Z9vectordotRK9_vector3dS1_Rf,"axG",@progbits,_Z9vectordotRK9_vector3dS1_Rf,comdat
+	.weak	_Z9vectordotRK9_vector3dS1_Rf
+	.type	_Z9vectordotRK9_vector3dS1_Rf, @function
+_Z9vectordotRK9_vector3dS1_Rf:
+.LFB2:
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	movl	8(%ebp), %eax
+	flds	(%eax)
+	movl	12(%ebp), %eax
+	flds	(%eax)
+	fmulp	%st, %st(1)
+	movl	8(%ebp), %eax
+	flds	4(%eax)
+	movl	12(%ebp), %eax
+	flds	4(%eax)
+	fmulp	%st, %st(1)
+	faddp	%st, %st(1)
+	movl	8(%ebp), %eax
+	flds	8(%eax)
+	movl	12(%ebp), %eax
+	flds	8(%eax)
+	fmulp	%st, %st(1)
+	faddp	%st, %st(1)
+	movl	16(%ebp), %eax
+	fstps	(%eax)
+	nop
+	popl	%ebp
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
+	ret
+	.cfi_endproc
+.LFE2:
+	.size	_Z9vectordotRK9_vector3dS1_Rf, .-_Z9vectordotRK9_vector3dS1_Rf
+	.text
+	.globl	_Z26trianglecollisiondetectionR9_triangleS0_
+	.type	_Z26trianglecollisiondetectionR9_triangleS0_, @function
+_Z26trianglecollisiondetectionR9_triangleS0_:
+.LFB4:
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	subl	$88, %esp
+	movl	12(%ebp), %eax
+	leal	12(%eax), %ecx
+	movl	8(%ebp), %eax
+	leal	12(%eax), %edx
+	leal	-20(%ebp), %eax
+	movl	%eax, 8(%esp)
+	movl	%ecx, 4(%esp)
+	movl	%edx, (%esp)
+	call	_Z11vectorminusRK9_vector3dS1_RS_
+	movl	12(%ebp), %eax
+	leal	12(%eax), %ecx
+	movl	8(%ebp), %eax
+	leal	24(%eax), %edx
+	leal	-32(%ebp), %eax
+	movl	%eax, 8(%esp)
+	movl	%ecx, 4(%esp)
+	movl	%edx, (%esp)
+	call	_Z11vectorminusRK9_vector3dS1_RS_
+	movl	12(%ebp), %eax
+	leal	12(%eax), %ecx
+	movl	8(%ebp), %eax
+	leal	36(%eax), %edx
+	leal	-44(%ebp), %eax
+	movl	%eax, 8(%esp)
+	movl	%ecx, 4(%esp)
+	movl	%edx, (%esp)
+	call	_Z11vectorminusRK9_vector3dS1_RS_
+	movl	12(%ebp), %eax
+	leal	-48(%ebp), %edx
+	movl	%edx, 8(%esp)
+	movl	%eax, 4(%esp)
+	leal	-20(%ebp), %eax
+	movl	%eax, (%esp)
+	call	_Z9vectordotRK9_vector3dS1_Rf
+	movl	12(%ebp), %eax
+	leal	-52(%ebp), %edx
+	movl	%edx, 8(%esp)
+	movl	%eax, 4(%esp)
+	leal	-32(%ebp), %eax
+	movl	%eax, (%esp)
+	call	_Z9vectordotRK9_vector3dS1_Rf
+	movl	12(%ebp), %eax
+	leal	-56(%ebp), %edx
+	movl	%edx, 8(%esp)
+	movl	%eax, 4(%esp)
+	leal	-44(%ebp), %eax
+	movl	%eax, (%esp)
+	call	_Z9vectordotRK9_vector3dS1_Rf
+	flds	-48(%ebp)
+	fldz
+	fxch	%st(1)
+	fucomip	%st(1), %st
+	fstp	%st(0)
+	jbe	.L6
+.L24:
+	flds	-52(%ebp)
+	fldz
+	fxch	%st(1)
+	fucomip	%st(1), %st
+	fstp	%st(0)
+	jbe	.L6
+.L25:
+	flds	-56(%ebp)
+	fldz
+	fxch	%st(1)
+	fucomip	%st(1), %st
+	fstp	%st(0)
+	ja	.L9
+.L6:
+	flds	-48(%ebp)
+	fldz
+	fucomip	%st(1), %st
+	fstp	%st(0)
+	jbe	.L10
+.L26:
+	flds	-52(%ebp)
+	fldz
+	fucomip	%st(1), %st
+	fstp	%st(0)
+	jbe	.L10
+.L27:
+	flds	-56(%ebp)
+	fldz
+	fucomip	%st(1), %st
+	fstp	%st(0)
+	jbe	.L10
+.L9:
+	movl	$0, %eax
+	jmp	.L23
+.L10:
+	movl	8(%ebp), %eax
+	leal	12(%eax), %ecx
+	movl	12(%ebp), %eax
+	leal	12(%eax), %edx
+	leal	-20(%ebp), %eax
+	movl	%eax, 8(%esp)
+	movl	%ecx, 4(%esp)
+	movl	%edx, (%esp)
+	call	_Z11vectorminusRK9_vector3dS1_RS_
+	movl	8(%ebp), %eax
+	leal	12(%eax), %ecx
+	movl	12(%ebp), %eax
+	leal	24(%eax), %edx
+	leal	-32(%ebp), %eax
+	movl	%eax, 8(%esp)
+	movl	%ecx, 4(%esp)
+	movl	%edx, (%esp)
+	call	_Z11vectorminusRK9_vector3dS1_RS_
+	movl	8(%ebp), %eax
+	leal	12(%eax), %ecx
+	movl	12(%ebp), %eax
+	leal	36(%eax), %edx
+	leal	-44(%ebp), %eax
+	movl	%eax, 8(%esp)
+	movl	%ecx, 4(%esp)
+	movl	%edx, (%esp)
+	call	_Z11vectorminusRK9_vector3dS1_RS_
+	movl	8(%ebp), %eax
+	leal	-60(%ebp), %edx
+	movl	%edx, 8(%esp)
+	movl	%eax, 4(%esp)
+	leal	-20(%ebp), %eax
+	movl	%eax, (%esp)
+	call	_Z9vectordotRK9_vector3dS1_Rf
+	movl	8(%ebp), %eax
+	leal	-64(%ebp), %edx
+	movl	%edx, 8(%esp)
+	movl	%eax, 4(%esp)
+	leal	-32(%ebp), %eax
+	movl	%eax, (%esp)
+	call	_Z9vectordotRK9_vector3dS1_Rf
+	movl	8(%ebp), %eax
+	leal	-68(%ebp), %edx
+	movl	%edx, 8(%esp)
+	movl	%eax, 4(%esp)
+	leal	-44(%ebp), %eax
+	movl	%eax, (%esp)
+	call	_Z9vectordotRK9_vector3dS1_Rf
+	flds	-60(%ebp)
+	fldz
+	fxch	%st(1)
+	fucomip	%st(1), %st
+	fstp	%st(0)
+	jbe	.L15
+.L28:
+	flds	-64(%ebp)
+	fldz
+	fxch	%st(1)
+	fucomip	%st(1), %st
+	fstp	%st(0)
+	jbe	.L15
+.L29:
+	flds	-68(%ebp)
+	fldz
+	fxch	%st(1)
+	fucomip	%st(1), %st
+	fstp	%st(0)
+	ja	.L18
+.L15:
+	flds	-60(%ebp)
+	fldz
+	fucomip	%st(1), %st
+	fstp	%st(0)
+	jbe	.L19
+.L30:
+	flds	-64(%ebp)
+	fldz
+	fucomip	%st(1), %st
+	fstp	%st(0)
+	jbe	.L19
+.L31:
+	flds	-68(%ebp)
+	fldz
+	fucomip	%st(1), %st
+	fstp	%st(0)
+	jbe	.L19
+.L18:
+	movl	$0, %eax
+	jmp	.L23
+.L19:
+	movl	$1, %eax
+.L23:
+	leave
+	.cfi_restore 5
+	.cfi_def_cfa 4, 4
+	ret
+	.cfi_endproc
+.LFE4:
+	.size	_Z26trianglecollisiondetectionR9_triangleS0_, .-_Z26trianglecollisiondetectionR9_triangleS0_
+	.ident	"GCC: (GNU) 4.7.2 20121109 (Red Hat 4.7.2-8)"
+	.section	.note.GNU-stack,"",@progbits

@@ -1,0 +1,1 @@
+cmd_/usr/src/test/hellokernel/hellokernel.ko := ld -r -m elf_i386 -T /usr/src/kernels/3.6.10-4.fc18.i686.PAE/scripts/module-common.lds --build-id  -o /usr/src/test/hellokernel/hellokernel.ko /usr/src/test/hellokernel/hellokernel.o /usr/src/test/hellokernel/hellokernel.mod.o

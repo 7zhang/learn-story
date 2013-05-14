@@ -1,0 +1,10 @@
+test.out: test.o loadstl.o trianglecollisiondetection.o 
+	g++ -pg -O1 -o test.out test.o loadstl.o trianglecollisiondetection.o common.o
+test.o: test.cpp loadstl.h common.h
+	g++ -pg -O1 -c test.cpp
+loadstl.o: loadstl.cpp loadstl.h common.h
+	g++ -pg -O1 -c loadstl.cpp
+trianglecollisiondetection.o: trianglecollisiondetection.cpp trianglecollisiondetection.h common.h 
+	g++ -pg -O1 -c trianglecollisiondetection.cpp
+clean:
+	rm test.out test.o loadstl.o trianglecollisiondetection.o 

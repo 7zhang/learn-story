@@ -1,0 +1,240 @@
+	.file	"trianglecollisiondetection.cpp"
+	.text
+	.p2align 4,,15
+	.globl	_Z26trianglecollisiondetectionR9_triangleS0_
+	.type	_Z26trianglecollisiondetectionR9_triangleS0_, @function
+_Z26trianglecollisiondetectionR9_triangleS0_:
+.LFB26:
+	.cfi_startproc
+	subl	$12, %esp
+	.cfi_def_cfa_offset 16
+	movl	16(%esp), %edx
+	movl	20(%esp), %ecx
+	flds	12(%edx)
+	fstps	(%esp)
+	flds	12(%ecx)
+	flds	16(%edx)
+	fstps	4(%esp)
+	flds	16(%ecx)
+	flds	20(%edx)
+	fstps	8(%esp)
+	flds	20(%ecx)
+	flds	(%ecx)
+	flds	8(%ecx)
+	flds	(%esp)
+	fsub	%st(5), %st
+	fmul	%st(2), %st
+	flds	4(%esp)
+	fsub	%st(5), %st
+	fmuls	4(%ecx)
+	faddp	%st, %st(1)
+	flds	8(%esp)
+	fsub	%st(4), %st
+	fmul	%st(2), %st
+	faddp	%st, %st(1)
+	flds	24(%edx)
+	fsub	%st(6), %st
+	fmul	%st(3), %st
+	flds	28(%edx)
+	fsub	%st(6), %st
+	fmuls	4(%ecx)
+	faddp	%st, %st(1)
+	flds	32(%edx)
+	fsub	%st(5), %st
+	fmul	%st(3), %st
+	faddp	%st, %st(1)
+	flds	36(%edx)
+	fsub	%st(7), %st
+	fmulp	%st, %st(4)
+	flds	40(%edx)
+	fsub	%st(6), %st
+	fmuls	4(%ecx)
+	faddp	%st, %st(4)
+	flds	44(%edx)
+	fsub	%st(5), %st
+	fmulp	%st, %st(3)
+	fxch	%st(3)
+	faddp	%st, %st(2)
+	fldz
+	fxch	%st(1)
+	fucomi	%st(1), %st
+	jbe	.L30
+	fxch	%st(3)
+	fucomi	%st(1), %st
+	jbe	.L31
+	fxch	%st(2)
+	xorl	%eax, %eax
+	fucomi	%st(1), %st
+	fstp	%st(1)
+	jbe	.L32
+	fstp	%st(0)
+	fstp	%st(0)
+	fstp	%st(0)
+	fstp	%st(0)
+	fstp	%st(0)
+	fstp	%st(0)
+	jmp	.L5
+	.p2align 4,,7
+	.p2align 3
+.L35:
+	fstp	%st(0)
+	fstp	%st(0)
+	fstp	%st(0)
+.L5:
+	addl	$12, %esp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 4
+	ret
+	.p2align 4,,7
+	.p2align 3
+.L30:
+	.cfi_restore_state
+	fstp	%st(1)
+	jmp	.L2
+	.p2align 4,,7
+	.p2align 3
+.L31:
+	fstp	%st(1)
+	fxch	%st(2)
+	jmp	.L2
+	.p2align 4,,7
+	.p2align 3
+.L32:
+	fxch	%st(1)
+	fxch	%st(2)
+.L2:
+	fldz
+	fucomi	%st(1), %st
+	fstp	%st(1)
+	ja	.L29
+	fstp	%st(0)
+	fstp	%st(0)
+	fstp	%st(0)
+	jmp	.L6
+	.p2align 4,,7
+	.p2align 3
+.L36:
+	fstp	%st(0)
+	fstp	%st(0)
+	.p2align 4,,7
+	.p2align 3
+.L6:
+	flds	(%edx)
+	flds	4(%edx)
+	flds	8(%edx)
+	fxch	%st(5)
+	fsubs	(%esp)
+	fmul	%st(2), %st
+	fxch	%st(4)
+	fsubs	4(%esp)
+	fmul	%st(1), %st
+	faddp	%st, %st(4)
+	fxch	%st(2)
+	fsubs	8(%esp)
+	fmul	%st(4), %st
+	faddp	%st, %st(3)
+	flds	(%esp)
+	fsubrs	24(%ecx)
+	fmul	%st(1), %st
+	flds	4(%esp)
+	fsubrs	28(%ecx)
+	fmul	%st(3), %st
+	faddp	%st, %st(1)
+	flds	8(%esp)
+	fsubrs	32(%ecx)
+	fmul	%st(5), %st
+	faddp	%st, %st(1)
+	flds	(%esp)
+	fsubrs	36(%ecx)
+	fmulp	%st, %st(2)
+	flds	4(%esp)
+	fsubrs	40(%ecx)
+	fmulp	%st, %st(3)
+	fxch	%st(1)
+	faddp	%st, %st(2)
+	flds	8(%esp)
+	fsubrs	44(%ecx)
+	fmulp	%st, %st(4)
+	fxch	%st(1)
+	faddp	%st, %st(3)
+	fldz
+	fxch	%st(2)
+	fucomi	%st(2), %st
+	jbe	.L33
+	fxch	%st(1)
+	fucomi	%st(2), %st
+	jbe	.L34
+	fxch	%st(3)
+	xorl	%eax, %eax
+	fucomi	%st(2), %st
+	fstp	%st(2)
+	ja	.L35
+	fxch	%st(1)
+	fxch	%st(2)
+	fxch	%st(1)
+	jmp	.L9
+	.p2align 4,,7
+	.p2align 3
+.L33:
+	fstp	%st(2)
+	fxch	%st(1)
+	jmp	.L9
+	.p2align 4,,7
+	.p2align 3
+.L34:
+	fstp	%st(2)
+.L9:
+	fldz
+	fucomi	%st(1), %st
+	fstp	%st(1)
+	ja	.L12
+	fstp	%st(0)
+	fstp	%st(0)
+	fstp	%st(0)
+	jmp	.L13
+	.p2align 4,,7
+	.p2align 3
+.L37:
+	fstp	%st(0)
+	fstp	%st(0)
+	.p2align 4,,7
+	.p2align 3
+.L13:
+	movl	$1, %eax
+	addl	$12, %esp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 4
+	ret
+	.p2align 4,,7
+	.p2align 3
+.L29:
+	.cfi_restore_state
+	fucomi	%st(2), %st
+	fstp	%st(2)
+	jbe	.L36
+	fxch	%st(1)
+	fucomip	%st(1), %st
+	fstp	%st(0)
+	jbe	.L6
+	fstp	%st(0)
+	fstp	%st(0)
+	fstp	%st(0)
+	xorl	%eax, %eax
+	jmp	.L5
+	.p2align 4,,7
+	.p2align 3
+.L12:
+	fucomi	%st(1), %st
+	fstp	%st(1)
+	jbe	.L37
+	fucomip	%st(1), %st
+	fstp	%st(0)
+	jbe	.L13
+	xorl	%eax, %eax
+	.p2align 4,,3
+	jmp	.L5
+	.cfi_endproc
+.LFE26:
+	.size	_Z26trianglecollisiondetectionR9_triangleS0_, .-_Z26trianglecollisiondetectionR9_triangleS0_
+	.ident	"GCC: (GNU) 4.7.2 20121109 (Red Hat 4.7.2-8)"
+	.section	.note.GNU-stack,"",@progbits

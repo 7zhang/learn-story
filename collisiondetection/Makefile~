@@ -1,0 +1,8 @@
+triangletest.out: triangletest.o trianglecollisiondetection.o
+	g++ -g -o triangletest.out triangletest.o trianglecollisiondetection.o
+triangletest.o: triangletest.cpp trianglecollisiondetection.h
+	g++ -g -c triangletest.cpp
+trianglecollisiondetection.o: trianglecollisiondetection.cpp trianglecollisiondetection.h
+	g++ -g -c trianglecollisiondetection.cpp
+clean:
+	rm triangletest.out triangletest.o trianglecollisiondetection.o
