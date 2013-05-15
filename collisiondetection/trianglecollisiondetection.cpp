@@ -14,11 +14,11 @@ bool trianglecollisiondetection(triangle &t1, triangle &t2)
 	vectordot(diff21, t2.normalvector, dot2);
 	vectordot(diff31, t2.normalvector, dot3);
 
-	if((dot1 > 0 && dot2 > 0 && dot3 > 0) || (dot1 < 0 && dot2 < 0 && dot3 < 0))
+	if((dot1 > ZERO  && dot2 > ZERO && dot3 > ZERO) || (dot1 < -ZERO && dot2 < -ZERO && dot3 < -ZERO))
 	{
 		return false;
 	}
-/*	else if(iszero(dot1) && iszero(dot2) && iszero(dot3))
+/*	else if(ISZERO(dot1) && ISZERO(dot2) && ISZERO(dot3))
 	{
 		return trianglecollisiondetection2d(t1, t2);
 	}
@@ -32,7 +32,7 @@ bool trianglecollisiondetection(triangle &t1, triangle &t2)
 	vectordot(diff21, t1.normalvector, dot5);
 	vectordot(diff31, t1.normalvector, dot6);
 
-	if((dot4 > 0 && dot5 > 0 && dot6 > 0) || (dot4 < 0 && dot5 < 0 && dot6 < 0))
+	if((dot4 > ZERO && dot5 > ZERO && dot6 > ZERO) || (dot4 < -ZERO && dot5 < -ZERO && dot6 < -ZERO))
 	{
 		return false;
 	}
@@ -44,13 +44,13 @@ bool trianglecollisiondetection(triangle &t1, triangle &t2)
 	vector3d p;
 	float s1 = vectordot(t1.vertex1, t1.normalvector);
 	float s2 = vectordot(t2.vertex1, t2.normalvector);
-	if(!iszero(cross.z))
+	if(!ISZERO(cross.z))
 	{
 		p.x = (t2.normalvector.y * s1 - t1.normalvector.y * s2)/cross.z;
 		p.y = (t1.normalvector.x * s2 - t2.normalvector.x * s1)/cross.z;
 		p.z = 0;
 	}
-	else if(!iszero(cross.y))
+	else if(!ISZERO(cross.y))
 	{
 		p.x = (t1.normalvector.z * s2 - t2.normalvector.z * s1)/cross.y;
 		p.y = 0;

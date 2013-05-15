@@ -3,15 +3,15 @@
 
 #include <stdio.h>
 
-int main(void)
+int main(int argc, char** argv)
 {
 	stldata newgun;
 	stldata part;
-	if(loadstl("robot_stl/newgun.STL", &newgun) != 0)
+	if(loadstl(argv[1], &newgun) != 0)
 	{
 		printf("load newgun stl error\n");
 	}
-	if(loadstl("robot_stl/newgun.STL", &part) != 0)
+	if(loadstl(argv[2], &part) != 0)
 	{
 		printf("load part stl error!\n");
 	}
@@ -26,6 +26,7 @@ int main(void)
 			if(trianglecollisiondetection(newgun.ptriangle[i], part.ptriangle[j]))
 					number++;
 	printf("there are %ld potential collision triangle\n", number);
+	printf("the ratio is %f\n", 1.0 * number/newgun.num /part.num);
 	free(newgun.ptriangle);
 	free(part.ptriangle);
 	return 0;

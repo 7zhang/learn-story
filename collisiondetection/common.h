@@ -3,8 +3,8 @@
 
 #include <math.h>
 
-#define iszero(u) (fabs(u) < 1e-6)
-
+#define ISZERO(u) (fabs(u) < 1e-6)
+#define ZERO 1e-6
 typedef struct _vector3d
 {
 	float x;

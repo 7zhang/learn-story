@@ -3,8 +3,8 @@
 
 #include <math.h>
 
-#define iszero(u) (fabs(u) < 1e-6)
-
+#define ISZERO(u) (fabs(u) < 1e-6)
+#define ZERO 1e-3
 typedef struct _vector3d
 {
 	float x;
@@ -55,3 +55,5 @@ inline void vectorcross(const vector3d &lhs, const vector3d &rhs, vector3d &cros
 	cross.z = lhs.x * rhs.y - lhs.y * rhs.x;
 	return;
 }
+
+#endif
