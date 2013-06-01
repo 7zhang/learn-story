@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int i = 3;
+
+int main(void)
+{
+	int *j = &i;
+	j++;
+	for (i = 0; i < 1016; i++, j++)
+		*j = i;
+	j = &i;
+	j++;
+	for (i = 0; i < 1016; i++, j++)
+		printf("j = %p\n", j);
+	j = &i;
+	j++;
+	for (i = 0; i < 1016; i++, j++)
+		printf("*j = %d\n", *j);
+	return 0;
+}
